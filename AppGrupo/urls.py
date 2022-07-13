@@ -4,10 +4,10 @@ from AppGrupo import views
 urlpatterns = [
    
     path('', views.inicio, name="Inicio"),
-    path('cursos', views.cursos, name="Cursos"),
-    path('entregables', views.entregables, name="Entregables"),
-    path('estudiantes', views.estudiantes, name="Estudiantes"),
-    path('profesores', views.profesores, name="Profesores"),
+    path('consultorio', views.consultorio, name="Consultorio"),
+    path('especialidad', views.especialidad, name="Especialidad"),
+    path('paciente', views.paciente, name="Paciente"),
+    path('profesional', views.profesional, name="Profesional"),
 ]
 
 """

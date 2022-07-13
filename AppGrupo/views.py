@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
-from AppGrupo.models import Cursos, Estudiantes, Profesores, Entregables
+from AppGrupo.models import Consultorio, Especialidad, Paciente, Profesional
 
 
 #importar los forms de carga y busqueda #from AppGrupo.forms import  
@@ -10,14 +10,14 @@ from AppGrupo.models import Cursos, Estudiantes, Profesores, Entregables
 def inicio(request):
     return render(request, "AppGrupo/inicio.html")
 
-def cursos(request):
-    return render(request, "AppGrupo/cursos.html")
+def consultorio(request):
+    return render(request, "AppGrupo/consultorio.html")
 
-def entregables(request):
-    return render(request, "AppGrupo/entregables.html")
+def especialidad(request):
+    return render(request, "AppGrupo/especialidad.html")
 
-def estudiantes(request):
-    return render(request, "AppGrupo/estudiantes.html")
+def paciente(request):
+    return render(request, "AppGrupo/paciente.html")
 
-def profesores(request):
-    return render(request, "AppGrupo/profesores.html")
+def profesional(request):
+    return render(request, "AppGrupo/profesional.html")
