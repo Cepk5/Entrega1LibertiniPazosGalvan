@@ -1,0 +1,16 @@
+{% extends "AppGrupo/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <h1 class="inicio_coder">Busqueda de Consultorio</h1>
+
+    <form action="buscar" method="GET">
+        <input type="text" name="localidad" id="localidad"></input>
+
+        <input type="submit" value="Buscar"></input>
+    </form>
+
+
+
+{% endblock %}  

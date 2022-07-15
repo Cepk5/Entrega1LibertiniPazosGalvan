@@ -1,9 +1,10 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
 from AppGrupo.models import Consultorio, Especialidad, Paciente, Profesional
+from AppGrupo.forms import BusquedaConsul
 
 
-#importar los forms de carga y busqueda #from AppGrupo.forms import  
+#importar los forms de carga y busqueda from AppGrupo.forms import  
 
 #Create functions
 
@@ -21,3 +22,23 @@ def paciente(request):
 
 def profesional(request):
     return render(request, "AppGrupo/profesional.html")
+
+#recibo el apiform
+
+def busquedaConsul(request):
+    return render(request, "AppGrupo/busquedaconsultorio.html")
+
+def buscar(request):
+    
+    if request.GET["localidad"]:
+
+        localidad = request.GET['localidad']
+        consultorio = Consultorio.objects.filter(localidad__icontains=localidad)
+
+        return render(request, "AppGrupo/buscar.html", {"localidad":localidad, "consultorio":consultorio})
+    
+    else:
+
+        respuesta = "Completa el campo de busqueda"
+
+    return render(request, "AppGrupo/buscar.html", {"respuesta":respuesta})

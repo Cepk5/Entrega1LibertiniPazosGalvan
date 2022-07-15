@@ -1,0 +1,27 @@
+{% extends "AppGrupo/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+   
+    <p>Busqueda de consultorio en el barrio: {{ localidad }}</p>
+
+    {% if consultorio %}
+
+    {% for consultorio in consultorio %}
+    <ul>
+    -----------------------------------------
+        <li>Barrio: {{consultorio.localidad}}</li>
+        <li>Calle: {{consultorio.calle}}</li>
+        <li>Altura: {{consultorio.altura}}</li>
+
+    </ul>
+    {% endfor %}
+
+    {% else %}
+
+    <p>Disculpa, no hay consultorio en ese barrio</p>
+
+    {% endif %}
+
+{% endblock %}
