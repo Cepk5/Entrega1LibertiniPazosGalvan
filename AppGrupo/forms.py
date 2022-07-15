@@ -1,18 +1,22 @@
 from django import forms
 
-"""
-creo los formularios de busqueda
+class ConsultorioForm(forms.Form):
+    calle = forms.CharField()
+    altura = forms.IntegerField()
+    localidad = forms.CharField()
 
-class CursoFormulario(forms.Form):
-
-    #Especificar los campos
-    curso = forms.CharField()
-    camada = forms.IntegerField()
-
-
-class ProfesorFormulario(forms.Form):   
+class ProfesionalForm(forms.Form):   
     nombre= forms.CharField(max_length=30)
     apellido= forms.CharField(max_length=30)
     email= forms.EmailField()
     profesion= forms.CharField(max_length=30)
-"""
+
+class EspecialidadForm(forms.Form):
+    nombre = forms.CharField(max_length=40)
+    tipo = forms.CharField(max_length=40)
+
+class PacienteForm(forms.Form):   
+    nombre= forms.CharField(max_length=30)
+    apellido= forms.CharField(max_length=30)
+    email= forms.EmailField()
+    
