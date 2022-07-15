@@ -8,15 +8,17 @@
 </head>
 <body>
     {% if miFormulario.error %}
-     <p> style='color:red' <HAY UN ERROR EN EL FORMULARIO </p>
+     <p style="color:red">HAY UN ERROR EN EL FORMULARIO </p>
     {% endif %}
 
-   <form action='{url 'especialidadForm' %}' method='POST'> {% csrf_token %}
-        <table>
-            {{miFormulario.as_table}}
+   <form action="especialidadForm" method='POST'> {% csrf_token %}
         <table>
 
-        <input type='submit' value="enviar"
+            {{miFormulario.as_table}}
+            
+        <table>
+
+        <input type='submit' value="enviar"></input>
    </form> 
 </body>
 </html>

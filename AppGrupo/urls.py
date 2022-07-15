@@ -10,4 +10,8 @@ urlpatterns = [
     path('busquedaconsultorio', busquedaConsul, name="BusquedaConsul"),
     path('buscar', buscar),
     path('consultorioForm', consultorioForm, name='ConsultorioForm'),
+    path('pacienteForm', pacienteForm, name='PacienteForm'),
+    path('profesionalForm', profesionalForm, name='ProfesionalForm'),
+    path('especialidadForm', especialidadForm, name='EspecialidadForm'),
+    
 ]

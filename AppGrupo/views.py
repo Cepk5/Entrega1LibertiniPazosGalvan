@@ -85,7 +85,7 @@ def pacienteForm(request):
             paciente.save()
             return render(request, 'AppGrupo/inicio.html')
     else:
-        miFormulario = EspecialidadForm()
+        miFormulario = PacienteForm()
     return render(request, 'AppGrupo/pacienteForm.html', {'miFormulario': miFormulario})
 
 def profesionalForm(request):
@@ -95,8 +95,9 @@ def profesionalForm(request):
             info = miFormulario.cleaned_data
             nombre=info['nombre']
             apellido=info['apellido']
-            titulo=info['titulo']
-            profesional=Profesional(nombre=nombre, apellido=apellido, titulo=titulo)
+            email=info['email']
+            profesion=info['profesion']
+            profesional=Profesional(nombre=nombre, apellido=apellido, email=email, profesion=profesion)
             profesional.save()
             return render(request, 'AppGrupo/inicio.html')
     else:
